@@ -25,7 +25,7 @@ This is a Go-based backend application for paylater feature
    ```
 
 ## **Architecture of Application**
-![ERD](erd_diagram.png)
+![ERD](system_architecture.png)
 
 ## **Database Structure**
 ![ERD](erd_diagram.png)
