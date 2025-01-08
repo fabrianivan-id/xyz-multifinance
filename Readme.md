@@ -4,14 +4,16 @@
 This is a Go-based backend application for paylater feature
 
 ## **Features**
+- Create consumer
+- Edit consuMER
+- Get credit limit
 - See credit limit
 - Do transactional with credit limit
-- Edit profile
+- Check remaining balance
 
 ## **Technologies Used**
 - Go
 - MySQL
-- Swagger/OpenAPI for documentation
 - Testify for unit testing
 
 ## **Setup Instructions**

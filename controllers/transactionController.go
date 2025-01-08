@@ -65,15 +65,3 @@ func GetTransactionsByStatus(w http.ResponseWriter, r *http.Request) {
 	transactions := services.GetTransactionsByStatus(status)
 	json.NewEncoder(w).Encode(transactions)
 }
-
-func GetTransactionsByDueDate(w http.ResponseWriter, r *http.Request) {
-	dueDate := r.URL.Query().Get("due_date")
-	transactions := services.GetTransactionsByDueDate(dueDate)
-	json.NewEncoder(w).Encode(transactions)
-}
-
-func GetTransactionsByAssetName(w http.ResponseWriter, r *http.Request) {
-	assetName := r.URL.Query().Get("asset_name")
-	transactions := services.GetTransactionsByAssetName(assetName)
-	json.NewEncoder(w).Encode(transactions)
-}

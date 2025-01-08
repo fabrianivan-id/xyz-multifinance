@@ -151,3 +151,118 @@ func GetAllConsumers() []models.Consumer {
 
 	return result
 }
+
+func GetConsumersByStatus(status string) []models.Consumer {
+	consumerMu.Lock()
+	defer consumerMu.Unlock()
+
+	result := make([]models.Consumer, 0)
+	for _, consumer := range consumers {
+		if consumer.Status == status {
+			result = append(result, consumer)
+		}
+	}
+
+	return result
+}
+
+func GetConsumersByCreditScore(score int) []models.Consumer {
+	consumerMu.Lock()
+	defer consumerMu.Unlock()
+
+	result := make([]models.Consumer, 0)
+	for _, consumer := range consumers {
+		if consumer.CreditScore == score {
+			result = append(result, consumer)
+		}
+	}
+
+	return result
+}
+
+func GetConsumersByCreditScoreAndStatus(score int, status string) []models.Consumer {
+	consumerMu.Lock()
+	defer consumerMu.Unlock()
+
+	result := make([]models.Consumer, 0)
+	for _, consumer := range consumers {
+		if consumer.CreditScore == score && consumer.Status == status {
+			result = append(result, consumer)
+		}
+	}
+
+	return result
+}
+
+func GetConsumersBySalary(salary float64) []models.Consumer {
+	consumerMu.Lock()
+	defer consumerMu.Unlock()
+
+	result := make([]models.Consumer, 0)
+	for _, consumer := range consumers {
+		if consumer.Salary == salary {
+			result = append(result, consumer)
+		}
+	}
+
+	return result
+}
+
+func GetConsumersByLimit(amount float64) []models.Consumer {
+	consumerMu.Lock()
+	defer consumerMu.Unlock()
+
+	result := make([]models.Consumer, 0)
+	for _, consumer := range consumers {
+		for _, limit := range consumer.Limit {
+			if limit == amount {
+				result = append(result, consumer)
+				break
+			}
+		}
+	}
+
+	return result
+}
+
+func GetConsumersByStatusAndCreditScore(status string, score int) []models.Consumer {
+	consumerMu.Lock()
+	defer consumerMu.Unlock()
+
+	result := make([]models.Consumer, 0)
+	for _, consumer := range consumers {
+		if consumer.Status == status && consumer.CreditScore == score {
+			result = append(result, consumer)
+		}
+	}
+
+	return result
+}
+
+func GetConsumersByStatusAndSalary(status string, salary float64) []models.Consumer {
+	consumerMu.Lock()
+	defer consumerMu.Unlock()
+
+	result := make([]models.Consumer, 0)
+	for _, consumer := range consumers {
+		if consumer.Status == status && consumer.Salary == salary {
+			result = append(result, consumer)
+		}
+	}
+
+	return result
+}
+
+func GetConsumersByStatusAndLimit(status string, tenor int, amount float64) []models.Consumer {
+	consumerMu.Lock()
+	defer consumerMu.Unlock()
+
+	result := make([]models.Consumer, 0)
+	for _, consumer := range consumers {
+		if consumer.Status == status && consumer.Limit[tenor] == amount {
+			result = append(result, consumer)
+		}
+	}
+
+	return result
+}
