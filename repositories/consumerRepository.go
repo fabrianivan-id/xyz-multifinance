@@ -1,17 +1,17 @@
 package repositories
 
 import (
-	"sync"
 	"myapp/models"
+	"sync"
 )
 
 var (
-	consumers = make(map[string]models.Consumer)
-	mu        sync.Mutex
+	consumers  = make(map[string]models.Consumer)
+	consumerMu sync.Mutex
 )
 
 func AddConsumer(consumer models.Consumer) {
-	mu.Lock()
+	consumerMu.Lock()
 	consumers[consumer.NIK] = consumer
-	mu.Unlock()
+	consumerMu.Unlock()
 }
