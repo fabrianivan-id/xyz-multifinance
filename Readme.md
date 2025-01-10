@@ -13,8 +13,6 @@ This is a Go-based backend application for paylater feature
 
 ## **Technologies Used**
 - Go
-- MySQL
-- Testify for unit testing
 
 ## **Setup Instructions**
 1. Clone the repository:
